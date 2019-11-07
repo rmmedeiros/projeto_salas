@@ -1,0 +1,469 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Open+Sans|Orbitron|Righteous&display=swap');
+
+/* 01 regras que serão aplicadas para 
+todo o nosso projeto,
+não importando o tamanho da tela */
+
+/* alteração do box-model para border-box */
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+ 
+ body, h1, h2, h3, p, figure {
+	margin:0;
+	padding: 0;
+ }
+ 
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+
+body {
+	font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	margin: 0 auto;
+
+}
+
+/* flex container uteis para facilitar 
+ajustes de posicionamento e alinhamento */
+h1, h1 a, nav, nav a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+
+/* Tornando as img flexiveis / responsivas */
+img {max-width: 100%;}
+
+/* img no css com tamanho de 100% e no repeat */
+header{
+	background-color: none;
+	width: 100%;
+	text-align: center;
+	display: flex;
+}
+
+/* limitador dentro do header */
+#limitador{
+	display: inline-flex;
+	align-items: flex-start;
+	width: 30%;
+}
+
+/* logo */
+#logo{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+}
+
+/* barra de navegação*/
+nav {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+nav li {
+	display: inline-block;
+	line-height: 50px;
+	margin: 0 20px;
+	
+}
+
+nav a {
+	text-decoration: none;
+	color: #222;
+	font-weight:bold;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+nav a:hover{
+	background-color: #222;
+	color: #fff;
+	border-radius:5px;
+}
+
+/* inserir o id destaque */
+#destaque img {
+	width: 100%;
+	height: 350px;
+	margin-top: 3px;
+}
+
+article {
+	background-color: white;
+	margin: 15px 0;
+	padding: 2%;
+	box-shadow: grey 1px 1px 5px;
+	width: 33%;
+	height: 600px;
+	display: inline-table;
+}
+
+article img {
+	width: 100%;
+	height: 150px;
+}
+
+/* criar uma regra para o <hr /> com as seguintes caracteristicas
+altura 2px
+sem borda
+cor de fundo qualquer
+largura 50%
+margin 15px topo/rodape
+margin auto para lateral
+sombra qualquer uma */
+hr{
+	height: 2px;
+	border: none;
+	background: darkgoldenrod;
+	width: 50%;
+	margin: 15px auto;
+	box-shadow: #555 3px 3px 25px 3px;
+	clear: both;
+}
+
+/* rodape */
+footer {
+	background: #ccc;
+	text-align: center;
+	padding-top: 10px;
+	clear: both;
+}
+
+footer p {
+	margin: 10px;
+}
+
+footer address {
+	padding-bottom: 10px;
+}
+
+/* div container dentro de body */
+.container {
+	width: 95%;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+/* pagina contato */
+#mapa{
+	width: 49%;
+	float: right;
+}
+
+#formulario{
+	width: 49%;
+	float: left;
+}
+
+#video-institucional, #titulo-centralizado{
+	clear: both;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+/* -- formulario -- */
+input {
+	width: 100%;
+	padding: 3px;
+	border: solid #777 1px;
+}
+
+input:focus, textarea:hover, input:hover, textarea:focus{
+	/* border: cor estilo tamanho - tudo em uma linha */
+	border: #004891; 
+	border-style: dotted solid;
+	border-width: 3px;
+	background: #b9e3ff;
+}
+
+textarea {
+	width: 100%;
+	padding: 3px;
+	border: solid #777 1px;
+}
+
+textarea:hover, textarea:focus{
+	/* border: cor estilo tamanho - tudo em uma linha */
+	border: #004891; 
+	border-style: dotted solid;
+	border-width: 3px;
+	background: #b9e3ff;
+}
+
+#enviar{
+	border: red dashed 1px;
+	background: #0191ed;
+	color: rgb(255, 255, 255);
+	width: 150px;
+	margin-top: 15px;
+}
+
+input[type=submit]{
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+input[autofocus]{
+	background: #999;
+}
+
+#enviar:hover, #enviar:focus{
+	border: #000 solid 1px;
+	transform: scale(1.08);
+	box-shadow: 3px 3px 5px 5px #ccc;
+}
+/* pagina produtos - formatando tabela */
+table{
+	display: flex;
+	justify-content: center;
+	text-transform: uppercase;
+	border: solid 0 red;
+	border-collapse: none;
+	padding-bottom: 60px;
+
+}
+
+td{
+	border: solid 0px white;
+	padding: 0 50px;
+	text-align: center;
+}
+
+/* formatação das linhas impares com odd - linhas pares com even */
+tr:nth-child(odd){
+	background: #ccc;
+}
+tr:nth-child(even){
+	background: #fff;
+}
+/* :first-child formatação do 1º elmento filho */
+tr:first-child{
+	background: #fff;
+	font-weight: bold;
+}
+/* last-child o ultimo filho*/
+tr:last-child{
+	background: width;
+	color: black;
+	font-weight: bold;
+}
+/* red aplicado no 3º td da 2º tr */
+tr:nth-child(2) td:nth-child(+3), 
+tr:nth-child(3) td:nth-child(3){
+	color: ;
+	font-weight: bold;
+}
+/* */
+tr:nth-child(4) td:nth-child(2n+3){
+	color: ;
+	font-weight: bold;
+} 
+
+/* 16/09/2019 - formatação das colunas da pagina produtos */
+section#produtos img, section#servicos img {
+	width: 90%;
+	height: 300px;
+
+}
+/* formatação das colunas  */
+#coluna-1, #coluna-3{
+	float: left;
+	width: 45%;
+}
+
+#coluna-2, #coluna-4{
+	float: right;
+	width: 45%;
+}
+
+div#coluna-1 > h2, div#coluna-3 > h2{
+	color: black;
+	text-transform: capitalize;
+} 
+
+div#coluna-2 > h2, div#coluna-4 > h2 {
+	color: black;
+	text-transform: uppercase;
+	text-decoration: none;
+} 
+th + th + th + th {
+	color: ;
+}
+
+/* formatação das imgs da pagina serviços */
+/* transform */
+.rotacao:hover{
+	transform: rotate(5deg);
+	filter: blur(15px);
+}
+
+.translate:hover{
+	transform: translate(10px, 10px);
+	filter: grayscale(100%);
+}
+
+.grad:hover{
+	/* para browser que nao suporta gradient */
+	background: yellow;
+	/* safari 5.1 a 6.0 */
+	background: -webkit-linear-gradient(left, red, yellow);
+	/* opera 11.1 a 12.0 */
+	background: -o-linear-gradient(left, red, yellow);
+	/* firefox 3.6 a 15  */
+	background: -moz-linear-gradient(right, blue, red);
+	/* todas as demais condições */
+	background: linear-gradient(left, red, blue);
+	padding: 40px;
+}
+.scale:hover{
+	transform: scale(0.8, 0.8);
+	box-shadow: #555 7px 7px 15px 15px;
+	filter: sepia(100%);
+}
+
+/* breakpoint com caracteristicas para telas abaixo de 900px */
+@media screen and (max-width: 900px){
+	/* formatação de tudo que esta dentro do header */
+	header{
+		background-color: #6a7aff;
+		width: 100%;
+		text-align: center;
+		display: flex;
+	}
+
+	#limitador{
+		display: inline-flex;
+		align-items: flex-start;
+		width: 10%;
+	}
+
+	#logo{
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 35px;
+	}
+
+	nav {
+		width: 100%;
+		display: inline-flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	nav ul {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	nav li {
+		display: inline-block;
+		line-height: 50px;
+		margin: 0 25px;
+	}
+
+	nav a {
+		width: 100%;
+		text-decoration: none;
+		color: #222;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	#destaque img {
+		width: 100%;
+		height: 170px;
+		margin-top: 3px;
+	}
+	
+	/* formatação do article da home */
+	article{
+		background-color: #fff;
+		margin: 1px 0;
+		padding: 2%;
+		box-shadow: #333 1px 1px 5px;
+		width: 100%;
+		height: 100px;
+		display: inline-table;
+	}
+
+	span{
+		display: none;
+	}
+
+	article img {
+		width: 100%;
+		height: auto;
+	}
+
+	/*  formatação da pagina produto e serviços */
+	#coluna-1, #coluna-2, #coluna-3, #coluna-4{
+		float: none;
+		width: 100%;
+	}
+
+	/* formatação da pagina contato */
+	#mapa, #formulario{
+		width: 100%;
+		margin-top: 10px;
+	}
+	#enviar{
+		width: 160px;
+		height: 50px;
+	}
+}
+
+/* breakpoint para telas abaixo de 680px */
+@media screen and (max-width: 680px){
+	nav a {
+		width: 20px;
+	}
+	nav li {
+		font-size: 0.8rem;
+		font-weight: bold;
+	}
+}
+
+/* breakpoint para telas abaixo de 400px */
+@media screen and (max-width: 400px){
+	body{
+		font-size: .9rem;
+	}
+
+	nav a{
+		width: 20px;
+	}
+
+	nav li {
+		font-size: 0.72rem;
+		font-weight: bold;
+	}
+
+	article img {
+		height: auto;
+	}
+
+	footer{
+		font-size: .8rem;
+	}
+}
